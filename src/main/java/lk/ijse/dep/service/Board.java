@@ -11,4 +11,5 @@ public interface Board {
     public void updateMove(int col, Piece move);
     public void updateMove(int col, int row, Piece move);
     public Winner findWinner();
+    public Piece[][] getPieces();
 }

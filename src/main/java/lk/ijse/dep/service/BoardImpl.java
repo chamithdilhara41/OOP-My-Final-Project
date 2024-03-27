@@ -2,8 +2,14 @@ package lk.ijse.dep.service;
 
 public class BoardImpl implements Board {
 
-    private Piece[][] pieces;
-    private BoardUI boardUI;
+    private final Piece[][] pieces;
+    private final BoardUI boardUI;
+
+    @Override
+    public Piece[][] getPieces() {
+        return pieces;
+    }
+
     public BoardImpl(BoardUI boardUI) {
         this.boardUI = boardUI;
 
@@ -55,7 +61,6 @@ public class BoardImpl implements Board {
     @Override
     public void updateMove(int col, Piece move) {
         pieces[col][findNextAvailableSpot(col)] = move;
-
         /*for (int i = 0; i < pieces[col].length; i++) {
             if (pieces[col][i] == Piece.EMPTY) {
                 pieces[col][i] = move;
